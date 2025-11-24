@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>翻译质量评估系统</title>
+
+</head>
+<body>
+
+
+<script>
+    // 显示加载状态
+    function showLoading() {
+        document.getElementById('loading').classList.add('show');
+    }
+
+    function hideLoading() {
+        document.getElementById('loading').classList.remove('show');
+    }
+
+    // 生成参考译文
+    function generateReference() {
+        const originalText = document.getElementById('original-text').value.trim();
+
+        if (!originalText) {
+            alert('请先输入中文原文！');
+            return;
+        }
+
+        showLoading();
+
+        // 这里暂时用模拟数据，后面会连接后端
+        setTimeout(() => {
+            document.getElementById('reference-result').innerHTML =
+                `<p><strong>参考译文：</strong></p><p>The rapid development of artificial intelligence has transformed various industries and brought revolutionary changes to our lives.</p>`;
+            hideLoading();
+        }, 1500);
+    }
+
+    // 评估翻译
+    function evaluateTranslation() {
+        const originalText = document.getElementById('original-text').value.trim();
+        const translatedText = document.getElementById('translated-text').value.trim();
+
+        if (!originalText || !translatedText) {
+            alert('请输入原文和译文！');
+            return;
+        }
+
+        showLoading();
+
+        // 模拟评估结果
+        setTimeout(() => {
+            document.getElementById('evaluation-result').innerHTML = `
+                    <div style="line-height: 1.8;">
+                        <p><strong>准确性：</strong>8/10</p>
+                        <p>翻译基本准确，很好地传达了原文的核心意思。</p>
+                        <br>
+                        <p><strong>流畅性：</strong>7/10</p>
+                        <p>表达较为自然，但某些句式可以更符合英文习惯。</p>
+                        <br>
+                        <p><strong>改进建议：</strong></p>
+                        <p>建议注意冠词的使用，如"artificial intelligence"前可以加上"the"。</p>
+                    </div>
+                `;
+
+            document.getElementById('chart-result').innerHTML = `
+                    <div style="display: flex; justify-content: space-around; align-items: center; height: 150px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 2em; font-weight: bold; color: #667eea;">8.2</div>
+                            <div>总分</div>
+                        </div>
+                        <div style="display: flex; gap: 20px;">
+                            <div style="text-align: center;">
+                                <div style="width: 30px; height: 80px; background: linear-gradient(to top, #667eea 80%, #e9ecef 20%); border-radius: 5px;"></div>
+                                <div style="margin-top: 5px;">准确性</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="width: 30px; height: 80px; background: linear-gradient(to top, #764ba2 70%, #e9ecef 30%); border-radius: 5px;"></div>
+                                <div style="margin-top: 5px;">流畅性</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="width: 30px; height: 80px; background: linear-gradient(to top, #667eea 90%, #e9ecef 10%); border-radius: 5px;"></div>
+                                <div style="margin-top: 5px;">完整性</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            hideLoading();
+        }, 2000);
+    }
+
+    // 清空所有内容
+    function clearAll() {
+        document.getElementById('original-text').value = '';
+        document.getElementById('translated-text').value = '';
+        document.getElementById('reference-result').innerHTML = '<p class="placeholder-text">参考译文将在这里显示...</p>';
+        document.getElementById('evaluation-

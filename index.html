@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主页</title>
+    <link rel="stylesheet" type="text/css" href="css/index1.css">
+    <link rel="stylesheet" href="css/daohanlan.css">
+    <script src="js/daohanlan.js"></script>
+    <script src="js/index1.js"></script>
+    <style>
+        nav ul {
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+    </style>
+
+</head>
+<header>
+    <div class="container1">
+        <div class="logo">
+            <img src="img/logo.jpg" alt="Logo">
+            <span>译教智师</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">首页</a></li>
+                <li><a href="pages/ai.html">智能体</a></li>
+                <li><a href="pages/shuyuku.html">术语库</a></li>
+                <li><a href="pages/luntan.html">论坛</a></li>
+                <li><a href="pages/xiaoyu.html">AI笔译评估</a></li>
+            </ul>
+        </nav>
+
+        <!-- 未登录状态 -->
+        <div class="auth-buttons" id="authButtons">
+            <a href="#" class="login-btn" id="loginBtn">登录与注册</a>
+            <a href="#" class="register-btn" id="aboutBtn">关于我们</a>
+        </div>
+
+        <!-- 已登录状态 -->
+        <div class="user-menu" id="userMenu">
+            <div class="user-avatar"></div>
+            <div class="user-info">
+                <div class="user-name"></div>
+                <div class="user-status"></div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdown-toggle" id="dropdownToggle">个人中心 ▼</button>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="pages/myself.html">个人资料</a>
+                    <a href="pages/loading.html" id="logoutBtn">退出登录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<body>
+<section class="carousel-container">
+    <div class="carousel">
+        <!-- 轮播图项目 -->
+        <div class="carousel-item active">
+            <img src="img/1.jpg" alt="图片 1">
+        </div>
+        <div class="carousel-item">
+            <img src="img/2.png" alt="图片 2">
+        </div>
+        <div class="carousel-item">
+            <img src="img/1.jpg" alt="图片 3">
+        </div>
+        <div class="carousel-item">
+            <img src="img/2.png" alt="图片 4">
+        </div>
+    </div>
+
+    <!-- 切换按钮 -->
+    <button class="carousel-control prev" id="prevBtn">&#10094;</button>
+    <button class="carousel-control next" id="nextBtn">&#10095;</button>
+</section>
+<div class="card-container">
+    <!-- 左侧卡片 -->
+    <div class="card card-left">
+        <!-- 顶部渐变内容区 -->
+        <div class="card-top">
+            <h2>丰富术语仓库</h2>
+            <p>海量、官方词汇</p>
+            <ul>
+                <li>收录多种学科专业术语</li>
+                <li>SQLite数据库存储</li>
+                <li>Python文本挖掘术语匹配</li>
+            </ul>
+        </div>
+        <!-- 底部纯色按钮区 -->
+        <div class="card-bottom">自研算法<br>中英双向检索，术语精准对应</div>
+    </div>
+
+    <!-- 中间卡片 -->
+    <div class="card card-middle">
+        <div class="card-top">
+            <h2>全面质量评估体系</h2>
+            <p>集成BLEU+NLTK等工具</p>
+            <div class="tag">多维度翻译质量评估分析</div>
+            <ul>
+                <li>辅助高校外刊发表</li>
+                <li>企业规模性海外营销</li>
+                <li>提升翻译应用效率</li>
+            </ul>
+        </div>
+        <div class="card-bottom">人工 + AI协作新模式<br><p style="color: white">结合词汇、句法、语篇特征</p></div>
+    </div>
+
+    <!-- 右侧卡片 -->
+    <div class="card card-right">
+        <div class="card-top">
+            <h2>大模型搭配云端</h2>
+            <p>开源、准确</p>
+            <ul>
+                <li>本地部署+云服务器搭建</li>
+                <li>多模型集成，轻松获取翻译</li>
+                <li>持续模型训练，实时响应</li>
+            </ul>
+        </div>
+        <div class="card-bottom">协同高效<br>主流大语言模型支持</div>
+    </div>
+</div>
+
+<section>
+    <div class="blue-bar">
+        <div class="text-container">快速  &nbsp;&nbsp; 智能 &nbsp;&nbsp;  灵活</div>
+    </div>
+    <div id="box2">
+        <div class="container2">
+            <h1>Core Functionality<br>核心功能</h1>
+            <p>术语库——Python爬取官方网站专业术语翻译，收录9门专业对应词汇。以SQLite数据库为存储，jieba库来分词实现术语匹配</p>
+            <p>模型评估——调用大语言模型获取翻译，应用BLEU+NLTK等工具指标来评估。接入硅基流动质谱清言API开源实现分析，用E-chart可视化图表</p>
+            <p>智能体——后端连接大模型、术语库、AI来提供在线快速反馈功能。基于术语库和MySQL数据库存储来回答用户提问，做到准确高效</p>
+            <br>
+            <h3>丰富算据、强大算力、全新算法 </h3>
+            <p>获取、整合各大权威语料库信息，实时更新术语库</p>
+            <p>自行编写双语评估、质量矩阵、术语识别算法。全面衡量AI评估翻译质量，实现模型优化闭环</p>
+
+            <div class="products">
+                <div class="product">
+                    <img src="img/11.png" alt="Product 1">
+                    <div class="product-description">大语言模型评估<br>多维度翻译质量评估</div>
+                </div>
+                <div class="product">
+                    <img src="img/22.png" alt="Product 2">
+                    <div class="product-description">专业术语仓库<br>官方词汇，数据库</div>
+                </div>
+                <div class="product">
+                    <img src="img/33.png" alt="Product 3">
+                    <div class="product-description">全新智能体<br>生成式反馈优化</div>
+                </div>
+                <div class="product">
+                    <img src="img/44.png" alt="Product 4">
+                    <div class="product-description">平台基础构建<br>算据、算力、算法的集成调配</div>
+                </div>
+            </div>
+        </div>
+        <div class="divider divider-1">
+            <div class="divider-content">
+                <div class="timeline-item">
+                    <h3>口译启动</h3>
+                </div>
+                <div class="timeline-item">
+                    <h3>前端获取</h3>
+                    <p>小程序+app</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>算力调用</h3>
+                    <p>BLEU可视化</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>模型评估</h3>
+                    <p>GLM+Deepseek</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>反馈输出</h3>
+                    <p>AI闭环优化</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>评估结束</h3>
+                </div>
+            </div>
+        </div>
+        <div class="container2">
+            <img src="img/3-1.png"/>
+            <img src="img/3-2.png"/>
+            <img src="img/3-3.png"/>
+        </div>
+        <div class="divider divider-2">
+            <div class="divider-content">
+                <span>教育维度</span>
+                <span>社会价值</span>
+                <span>发展规划</span>
+            </div>
+        </div>
+        <div class="container2">
+            <h2 style="font-family: 华文楷体">提升生产力与工作模式 服务地方战略 助力学术国际化</h2>
+            <h2 style="font-family: 华文楷体">数智化赋能，引领行业发展</h2>
+            <h2 style="font-family: 华文楷体">分一年、三年、五年计划加以实施</h2>
+            <img src="img/l1.png"/>
+            <img src="img/l3.png"/>
+        </div>
+
+    </div>
+
+    <footer>
+        <!-- 左侧固定区域 -->
+        <div class="footer-left">
+            <img src="img/logo.jpg" alt="智教译师 Logo" class="main-logo">
+            <div class="text-container">
+                <div class="brand-name">译教智师</div>
+                <div class="copyright-text">The Cognitive Digital Ecosystem&copy;</div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const logoCloudContainer = document.getElementById('logo-cloud');
+
+                const logoSources = [
+                    'img/huawei.png',
+                    'img/科学网.png',
+                    'img/Ant.png',
+                    'img/lang.png',
+                    'img/自然语言.png',
+                    'img/委员会.png',
+                    'img/unterm.png',
+                    'img/科学调查.png',
+                    'img/阿里云.png',
+                    'img/科技名词.png'
+                ];
+                let seed = 12345; // 你可以改成任何你喜欢的数字
+                function pseudoRandom() {
+                    seed = (seed * 9301 + 49297) % 233280;
+                    return seed / 233280;
+                }
+                logoCloudContainer.innerHTML = '';
+
+                // 创建词云效果
+                logoSources.forEach(src => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = 'Partner Logo';
+                    img.className = 'cloud-logo';
+
+                    // 随机大小（词云效果）
+                    const minSize = 110;
+                    const maxSize = 126;
+                    const randomValue = pseudoRandom();
+                    const randomWidth = Math.floor(randomValue * (maxSize - minSize + 1)) + minSize;
+                    img.style.width = `${randomWidth}px`;
+
+                    // 随机垂直位置偏移，创造更自然的云图效果
+                    const randomOffset = (Math.random() - 0.5) * 10;
+                    img.style.transform = `translateY(${randomOffset}px)`;
+
+                    logoCloudContainer.appendChild(img);
+                });
+            });
+        </script>
+        <!-- 右侧Logo云图区域 -->
+        <div class="footer-right" id="logo-cloud">
+        </div>
+    </footer>
+
+</section>
+
+
+<!-- 虚化背景层 -->
+<div id="aboutModal" class="modal-backdrop"></div>
+
+<!-- 模态框内容层 -->
+<div id="aboutModalContent" class="modal-content1">
+    <span class="modal-close">&times;</span>
+    <h2>关于我们</h2>
+    <p>
+        这里是你的关于我们页面内容。你可以写任何你想介绍的信息，比如你的团队故事、使命愿景、联系方式等等。
+    </p>
+    <p>
+        欢迎访问我们的网站，希望你能喜欢！
+    </p>
+</div>
+
+</body>
+</html>
