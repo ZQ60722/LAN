@@ -269,7 +269,7 @@
 
             try {
                 // 发送请求到后端
-                const response = await fetch('http://127.0.0.1:8000/chat/', {
+                const response = await fetch('https://ake-bankend-7bhfz8oy6-yuxuanjis-projects.vercel.app/chat/', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -484,7 +484,7 @@
 
         try {
             // 发送请求到后端
-            const response = await fetch('http://127.0.0.1:8000/chat/', {
+            const response = await fetch('https://ake-bankend-7bhfz8oy6-yuxuanjis-projects.vercel.app/chat/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message: message }),
